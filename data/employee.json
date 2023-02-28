@@ -1,0 +1,94 @@
+[
+  {
+    "name": "Johny",
+    "surname": "Raw",
+    "email": "Johny@gmail.com",
+    "password": "123",
+    "reading": [
+      {
+        "id": 1,
+        "name": "Война и мир",
+        "author": "Лев Толстой",
+        "genre": "Роман",
+        "year": 1869,
+        "status": "free"
+      }
+    ],
+    "read": [
+      {
+        "id": 3,
+        "name": "Преступление и наказание",
+        "author": "Федор Достоевский",
+        "genre": "Роман",
+        "year": 1866,
+        "status": "free"
+      }
+    ]
+  },
+  {
+    "name": "Kile",
+    "surname": "Sandwich",
+    "email": "Kile@gmail.com",
+    "password": "123",
+    "reading": [],
+    "read": [
+      {
+        "id": 1,
+        "name": "Война и мир",
+        "author": "Лев Толстой",
+        "genre": "Роман",
+        "year": 1869,
+        "status": "free"
+      }
+    ]
+  },
+  {
+    "name": "Nina",
+    "surname": "Hooker",
+    "email": "Nina@gmail.com",
+    "password": "123",
+    "reading": [
+      {
+        "id": 5,
+        "name": "Братья Карамазовы",
+        "author": "Федор Достоевский",
+        "genre": "Роман",
+        "year": 1880,
+        "status": "free"
+      }
+    ],
+    "read": [
+      {
+        "id": 7,
+        "name": "Собачье сердце",
+        "author": "Михаил Булгаков",
+        "genre": "Роман",
+        "year": 1925
+      }
+    ]
+  },
+  {
+    "name": "Tony",
+    "surname": "Stark",
+    "email": "Tony@gmail.com",
+    "password": "123",
+    "reading": [],
+    "read": []
+  },
+  {
+    "name": "Kairat",
+    "surname": "Alyshov",
+    "email": "kairatalishev1308@gmail.com",
+    "password": "123",
+    "reading": [],
+    "read": []
+  },
+  {
+    "name": "Kairat",
+    "surname": "Alyshov",
+    "email": "qwe@qwe",
+    "password": "123",
+    "reading": [],
+    "read": []
+  }
+]
