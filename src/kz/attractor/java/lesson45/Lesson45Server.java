@@ -11,14 +11,14 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 
-public class Lesson45Lesson extends Lesson44Server {
+public class Lesson45Server extends Lesson44Server {
 
     boolean profile = true;
 
-    Employee newEmployee = new Employee(null, null, null, null);
+    Employee newEmployee = new Employee(0,null, null, null, null, null, null);
 
 
-    public Lesson45Lesson(String host, int port) throws IOException {
+    public Lesson45Server(String host, int port) throws IOException {
         super(host, port);
         registerGet("/login", this::loginGet);
         registerPost("/login", this::loginPost);
@@ -34,7 +34,7 @@ public class Lesson45Lesson extends Lesson44Server {
         if(!profile){
         renderTemplate(exchange, "profile.html", newEmployee);}
         else {
-            newEmployee = new Employee("Example", "Example", "example@gmail", "example");
+            newEmployee = new Employee(1,"Example", "Example", "example@gmail", "example", null, null );
             renderTemplate(exchange, "profile.html", newEmployee);
         }
     }
@@ -59,6 +59,8 @@ public class Lesson45Lesson extends Lesson44Server {
         String raw = getBody(exchange);
         Map<String, String> parsed = Utils.parseUrlEncoded(raw, "&");
         List<Employee> employees = EmployeeDataModel.readEmployersFile();
+
+        int id = employees.size() + 1;
         String name = parsed.get("name");
         String surname = parsed.get("surname");
         String email = parsed.get("email");
@@ -71,7 +73,7 @@ public class Lesson45Lesson extends Lesson44Server {
             }
         }
         if (checkEmail) {
-            Employee employee = new Employee(name, surname, email, password);
+            Employee employee = new Employee(id, name, surname, email, password, List.of(), List.of());
             employees.add(employee);
             EmployeeDataModel.writeEmployersFile(employees);
             redirect303(exchange, "/done");

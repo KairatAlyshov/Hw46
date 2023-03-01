@@ -14,6 +14,7 @@
 <table class="table table-striped">
   <thead>
   <tr>
+    <th scope="col">Id</th>
     <th scope="col">Name</th>
     <th scope="col">Surname</th>
     <th scope="col">Email</th>
@@ -23,6 +24,7 @@
   </thead>
   <tfoot>
   <tr>
+       <th scope="col">Id</th>
        <th scope="col">Name</th>
        <th scope="col">Surname</th>
        <th scope="col">Email</th>
@@ -33,6 +35,7 @@
   <tbody>
   <#list employees as employee>
   <tr>
+    <td>${employee.id}</td>
     <td>${employee.name}</td>
     <td>${employee.surname}</td>
     <td>${employee.email}</td>

@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "name": "Johny",
     "surname": "Raw",
     "email": "Johny@gmail.com",
@@ -26,6 +27,7 @@
     ]
   },
   {
+    "id": 2,
     "name": "Kile",
     "surname": "Sandwich",
     "email": "Kile@gmail.com",
@@ -43,6 +45,7 @@
     ]
   },
   {
+    "id": 3,
     "name": "Nina",
     "surname": "Hooker",
     "email": "Nina@gmail.com",
@@ -68,6 +71,7 @@
     ]
   },
   {
+    "id": 4,
     "name": "Tony",
     "surname": "Stark",
     "email": "Tony@gmail.com",
@@ -76,17 +80,10 @@
     "read": []
   },
   {
+    "id": 5,
     "name": "Kairat",
     "surname": "Alyshov",
     "email": "kairatalishev1308@gmail.com",
-    "password": "123",
-    "reading": [],
-    "read": []
-  },
-  {
-    "name": "Kairat",
-    "surname": "Alyshov",
-    "email": "qwe@qwe",
     "password": "123",
     "reading": [],
     "read": []

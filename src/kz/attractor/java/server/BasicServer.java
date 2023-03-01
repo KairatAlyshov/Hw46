@@ -143,6 +143,17 @@ public abstract class BasicServer {
         }
     }
 
+    protected static String getCookies(HttpExchange exchange){
+        return exchange.getRequestHeaders()
+                .getOrDefault("Cookie", List.of(""))
+                .get(0);
+    }
+
+
+    protected void setCookie(HttpExchange exchange, Cookie cookie){
+        exchange.getResponseHeaders().add("Set-Cookie", cookie.toString());
+    }
+
     private void handleIncomingServerRequests(HttpExchange exchange) throws IOException {
         var route = getRoutes().getOrDefault(makeKey(exchange), this::respond404);
         route.handle(exchange);
