@@ -74,28 +74,28 @@ public class Lesson46Server extends Lesson44Server {
 
 
 
-//        String raw = getBody(exchange);
-//        Map<String, String> parsed = Utils.parseUrlEncoded(raw, "&");
-//        try {
-//            if(identificator(exchange, " email")) {
-//                int bookID = Integer.parseInt(parsed.get("id"));
-//                List<Employee> employees = EmployeeDataModel.readEmployersFile();
-//                Employee employee = employees.get(bookID);
-//                if (employee.getReading().size() >= 2) {
-//                    String state = "you can't take more than 2 books";
-//                    String data = String.format("<p>"+"<b>%s</b></p>", state);
-//                    sendByteData(exchange, ResponseCodes.OK, ContentType.TEXT_HTML, data.getBytes());
-//                    renderTemplate(exchange, "takeBook.ftlh",getBooksDataModel());
-//                } else {
-//                    String state = "you can ";
-//                    String data = String.format("<p>"+"<b>%s</b></p>", state);
-//                   EmployeeDataModel.writeEmployersFile(employees);
-//                    sendByteData(exchange, ResponseCodes.OK, ContentType.TEXT_HTML, data.getBytes());
-//                }
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        String raw = getBody(exchange);
+        Map<String, String> parsed = Utils.parseUrlEncoded(raw, "&");
+        try {
+            if(identificator(exchange, " email")) {
+                int bookID = Integer.parseInt(parsed.get("id"));
+                List<Employee> employees = EmployeeDataModel.readEmployersFile();
+                Employee employee = employees.get(bookID);
+                if (employee.getReading().size() >= 2) {
+                    String state = "you can't take more than 2 books";
+                    String data = String.format("<p>"+"<b>%s</b></p>", state);
+                    sendByteData(exchange, ResponseCodes.OK, ContentType.TEXT_HTML, data.getBytes());
+                    renderTemplate(exchange, "takeBook.ftlh",getBooksDataModel());
+                } else {
+                    String state = "you can ";
+                    String data = String.format("<p>"+"<b>%s</b></p>", state);
+                   EmployeeDataModel.writeEmployersFile(employees);
+                    sendByteData(exchange, ResponseCodes.OK, ContentType.TEXT_HTML, data.getBytes());
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
