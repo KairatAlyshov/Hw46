@@ -41,7 +41,7 @@ public class Lesson44Server extends BasicServer {
     }
 
 
-    private BooksDataModel getBooksDataModel() {
+    BooksDataModel getBooksDataModel() {
         return new BooksDataModel();
     }
 

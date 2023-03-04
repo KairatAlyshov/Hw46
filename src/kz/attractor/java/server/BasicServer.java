@@ -55,15 +55,6 @@ public abstract class BasicServer {
         return "";
     }
 
-    protected void redirect303(HttpExchange exchange, String path){
-        try{
-            exchange.getResponseHeaders().add("Location", path);
-            exchange.sendResponseHeaders(303, 0);
-            exchange.getRequestBody().close();
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-    }
 
     private static void setContentType(HttpExchange exchange, ContentType type) {
         exchange.getResponseHeaders().set("Content-Type", String.valueOf(type));
@@ -143,7 +134,7 @@ public abstract class BasicServer {
         }
     }
 
-    protected static String getCookies(HttpExchange exchange){
+    public static String getCookies(HttpExchange exchange){
         return exchange.getRequestHeaders()
                 .getOrDefault("Cookie", List.of(""))
                 .get(0);

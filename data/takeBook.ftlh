@@ -5,42 +5,52 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Profile</title>
+    <title>takeBook</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 </head>
 <body>
-<b> Profile </b>
+<main>
+    <form action="/takeBook" method="post">
 <table class="table table-striped">
     <thead>
+
     <tr>
+        <th scope="col">Id</th>
         <th scope="col">Name</th>
-        <th scope="col">Surname</th>
-        <th scope="col">Email</th>
-        <th scope="col">TakeBook</th>
-        <th scope="col">BackBook</th>
+        <th scope="col">Author</th>
+        <th scope="col">Genre</th>
+        <th scope="col">Year</th>
+        <th scope="col">TAKE</th>
     </tr>
     </thead>
     <tfoot>
     <tr>
+        <th scope="col">Id</th>
         <th scope="col">Name</th>
-        <th scope="col">Surname</th>
-        <th scope="col">Email</th>
-        <th scope="col">TakeBook</th>
-        <th scope="col">BackBook</th>
+        <th scope="col">Author</th>
+        <th scope="col">Genre</th>
+        <th scope="col">Year</th>
+        <th scope="col">TAKE</th>
     </tr>
     </tfoot>
     <tbody>
-
+    <#list books as book>
     <tr>
-        <td>${name}</td>
-        <td>${surname}</td>
-        <td>${email}</td>
-        <td><a type="button" class="btn btn-dark" href="/takeBook">TakeBook</a></td>
-        <td><a type="button" class="btn btn-dark" href="/backBook">BackBook</a></td>
+        <td>${book.id}</td>
+        <td>${book.name}</td>
+        <td>${book.author}</td>
+        <td>${book.genre}</td>
+        <td>${book.year}</td>
+        <td><input type="checkbox" name="id" value="${book.id}"></td>
+
     </tr>
+    </#list>
     </tbody>
 </table>
+        <button type="submit" class="btn btn-primary">Take Books</button>
+    </form>
+</main>
 </body>
 </html>
